@@ -1,18 +1,28 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+  },
+  data(){
+    return {
+        posts:[],
+        Params: {
+          "accessToken": "2315886501809317",
+        }
+    }
+  },
+  mounted(){
+    const baseUri = this.Params.accessToken
+    this.$http.get(baseUri+'/'+1).then((result)=>{
+        console.log(result);
+    });
   }
 }
 </script>

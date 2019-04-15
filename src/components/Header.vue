@@ -16,4 +16,7 @@ export default{
 }
 </script>
 <style scoped>
+md-tabs{
+    width:100%;
+}
 </style>
